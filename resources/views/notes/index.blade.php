@@ -6,7 +6,7 @@
 
 <ul>
     @foreach($notes as $n)
-        <li>{{$n['text']}}</li>
+        <li>{{$n->text}}</li>
     @endforeach
 </ul>
 </body>

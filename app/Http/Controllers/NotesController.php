@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Note;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,14 +17,7 @@ class NotesController extends Controller
      */
     public function index()
     {
-        $notes = [
-            [
-                'text' => "Hello World"
-            ],
-            [
-                'text' => "Goodbye World"
-            ]
-        ];
+        $notes = Note::all();
 
         return view('notes.index', [
             'notes' => $notes
