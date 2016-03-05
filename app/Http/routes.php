@@ -19,3 +19,13 @@ Route::get('/notes/index', [
     'as' => 'notes.index',
     'uses' => 'NotesController@index'
 ]);
+
+Route::get('/notes/create', [
+    'as' => 'notes.create',
+    'uses' => 'NotesController@create'
+]);
+
+Route::post('/notes/store', [
+   'as' => 'notes.store',
+   'uses' => 'NotesController@store'
+]);

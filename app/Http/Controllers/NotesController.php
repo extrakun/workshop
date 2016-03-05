@@ -31,7 +31,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        //
+        return view('notes.create');
     }
 
     /**
@@ -42,7 +42,12 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $text = $request->get('text');
+        $note = new Note();
+        $note->text = $text;
+        $note->save();
+
+        return redirect()->route('notes.index');
     }
 
     /**
