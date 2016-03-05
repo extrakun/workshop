@@ -29,3 +29,8 @@ Route::post('/notes/store', [
    'as' => 'notes.store',
    'uses' => 'NotesController@store'
 ]);
+
+Route::get('/notes/show/{note}', [
+   'as' => 'notes.show',
+   'uses' => 'NotesController@show'
+]);

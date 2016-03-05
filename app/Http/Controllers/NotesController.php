@@ -58,8 +58,11 @@ class NotesController extends Controller
      */
     public function show($id)
     {
-        //
+        $note = Note::find($id);
+        return view('notes.show', ['note' => $note]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
