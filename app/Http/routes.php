@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function(){
-   return "Hello World";
-});
+Route::get('/notes/index', [
+    'as' => 'notes.index',
+    'uses' => 'NotesController@index'
+]);

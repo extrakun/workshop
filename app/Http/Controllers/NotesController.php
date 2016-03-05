@@ -16,7 +16,18 @@ class NotesController extends Controller
      */
     public function index()
     {
-        return "View All Notes";
+        $notes = [
+            [
+                'text' => "Hello World"
+            ],
+            [
+                'text' => "Goodbye World"
+            ]
+        ];
+
+        return view('notes.index', [
+            'notes' => $notes
+        ]);
     }
 
     /**
