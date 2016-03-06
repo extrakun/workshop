@@ -62,8 +62,6 @@ class NotesController extends Controller
         return view('notes.show', ['note' => $note]);
     }
 
-
-
     /**
      * Show the form for editing the specified resource.
      *
