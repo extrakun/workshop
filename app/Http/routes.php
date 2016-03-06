@@ -34,3 +34,13 @@ Route::get('/notes/show/{note}', [
    'as' => 'notes.show',
    'uses' => 'NotesController@show'
 ]);
+
+Route::get('/notes/edit/{note}', [
+    'as' => 'notes.edit',
+    'uses' => 'NotesController@edit'
+]);
+
+Route::post('/notes/update/{note}', [
+    'as' => 'notes.update',
+    'uses' => 'NotesController@update'
+]);
