@@ -8,6 +8,10 @@
         </p>
         {!! Form::open(['method' => 'post', 'route' => 'notes.store']) !!}
         {!! Form::text('text') !!}
+        <div>
+            {!! Form::label('User') !!}
+        {!! Form::select('user_id', $all_users) !!}
+        </div>
         {!! Form::submit() !!}
         {!! Form::close() !!}
     </body>

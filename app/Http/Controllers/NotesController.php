@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Note;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -31,7 +32,10 @@ class NotesController extends Controller
      */
     public function create()
     {
-        return view('notes.create');
+        $users = User::all()->lists('name', 'id');
+        return view('notes.create',[
+            'all_users' => $users
+        ]);
     }
 
     /**
@@ -45,6 +49,7 @@ class NotesController extends Controller
         $text = $request->get('text');
         $note = new Note();
         $note->text = $text;
+        $note->user_id = $request->get('user_id');
         $note->save();
 
         return redirect()->route('notes.index');
